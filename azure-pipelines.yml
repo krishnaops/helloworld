@@ -22,6 +22,8 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     
+- task: PublishBuildArtifacts@1
+    
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Pay-As-You-Go(0de197d3-4c42-43c7-9207-b8c2bf1be2c8)'
