@@ -32,10 +32,3 @@ steps:
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
     
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Pay-As-You-Go(0de197d3-4c42-43c7-9207-b8c2bf1be2c8)'
-    appType: 'webAppLinux'
-    appName: 'azurename'
-    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-    runtimeStack: 'TOMCAT|9.0-jre8'
