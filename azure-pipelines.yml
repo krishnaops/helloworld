@@ -10,6 +10,17 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(0de197d3-4c42-43c7-9207-b8c2bf1be2c8)'
+    appType: 'webAppLinux'
+    WebAppName: 'azurename'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'OneClick'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'STATICSITE|1.0'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
